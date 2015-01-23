@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib import admin
+from django.contrib.auth import user
 # Create your models here.
 
 
@@ -21,7 +22,10 @@ class libro(models.Model):
 
 class voto(models.Model):
 	libro = models.ForeignKey(libro)
+	usuario = user.ForeignKey(auth_user)
 	voto = models.IntegerField()
+	class Meta:
+		unique_together = (('libro','usuario'),)
 
 #    def __unicode__(self):
 #        return self.publicaciones
