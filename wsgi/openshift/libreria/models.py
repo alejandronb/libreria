@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-from django.contrib.auth import user
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -13,8 +13,7 @@ class autor(models.Model):
 
 class libro(models.Model):
     nombre = models.CharField(max_length=200)
-    ISBN = models.CharField(max_length=10,null=True,blank=True)
-    fecha_pub = models.DateTimeField('fecha publicacion')
+    fecha_pub = models.DateField('fecha publicacion')
     autor = models.ForeignKey(autor)
     def __unicode__(self):
         return self.nombre
@@ -22,10 +21,10 @@ class libro(models.Model):
 
 class voto(models.Model):
 	libro = models.ForeignKey(libro)
-	usuario = user.ForeignKey(auth_user)
+	#usuario = user.ForeignKey(user)
 	voto = models.IntegerField()
-	class Meta:
-		unique_together = (('libro','usuario'),)
+#	class Meta:
+#		unique_together = (('libro','usuario'),)
 
 #    def __unicode__(self):
 #        return self.publicaciones
