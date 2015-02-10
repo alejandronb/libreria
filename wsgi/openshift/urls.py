@@ -16,5 +16,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^listado/$', 'openshift.libreria.views', name='listar_libros'),
     url(r'^listado/', 'openshift.libreria.views.listar_libros'),
-
+    url(r'^registro/$', 'openshift.libreria.views.registro'),
+    url(r'^login/$', 'openshift.libreria.views.login'),
+    url(r'^login2/$', 'openshift.libreria.views.login2'),
 )

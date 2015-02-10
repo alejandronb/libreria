@@ -15,6 +15,7 @@ class libro(models.Model):
     nombre = models.CharField(max_length=200)
     fecha_pub = models.DateField('fecha publicacion')
     autor = models.ForeignKey(autor)
+    sinopsis = models.CharField(max_length=1500)
     def __unicode__(self):
         return self.nombre
 
