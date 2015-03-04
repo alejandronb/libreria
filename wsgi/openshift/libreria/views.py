@@ -33,7 +33,7 @@ def login(request):
         if user.is_active:
             auth.login(request,user)
             request.session['username'] = username
-            return HttpResponseRedirect('/asdasd')
+            return HttpResponseRedirect('/listado')
         else:
             return HttpResponse('<p>Usuario invalido</p>')
     else:
