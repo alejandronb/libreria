@@ -4,13 +4,13 @@
     <p class="error">Lo siento, usuario y/o password incorrecto.</p>
   {% endif %}
 
-  <form action="/login/" method="post">{% csrf_token %}
+  <form action="/listado/" method="post">{% csrf_token %}
     <label for="username">Usuario:</label>
     <input type="text" name="username" value="" id="username">
     <label for="password">Contraseña:</label>
     <input type="password" name="password" value="" id="password">
 
-    <input type="submit" value="login" />
+    <input type="submit" value="Entrar" />
     <input type="hidden" name="next" value="{{ next|escape }}" />
     <a href="/registro/">Registro</a>
   </form>
