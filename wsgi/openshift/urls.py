@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'openshift.views.home', name='home'),
+    #url(r'^$', 'openshift.views.home', name='home'),
+
     # url(r'^openshift/', include('openshift.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -17,6 +18,7 @@ urlpatterns = patterns('',
     #url(r'^listado/$', 'openshift.libreria.views', name='listar_libros'),
     url(r'^listado/', 'openshift.libreria.views.listar_libros'),
     url(r'^registro/$', 'openshift.libreria.views.registro'),
-    url(r'^login/$', 'openshift.libreria.views.login'),
-    url(r'^login2/$', 'openshift.libreria.views.login2'),
+    url(r'^login/$', 'openshift.libreria.views.login2'),
+    url(r'^$', 'openshift.libreria.views.login2'),
+
 )
