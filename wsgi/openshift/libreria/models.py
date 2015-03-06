@@ -20,11 +20,13 @@ class libro(models.Model):
         return self.nombre
 
 
-class voto(models.Model):
+class userlibro(models.Model):
 	libro = models.ForeignKey(libro)
-	#usuario = user.ForeignKey(user)
-	voto = models.IntegerField()
-#	class Meta:
+	usuario = models.ForeignKey(User)
+	leido = models.IntegerField()
+    #unique_together = (("usuario","libro","leido"),)
+	# class Meta:
+ #        verbose_name_plural = 'userlibros'
 #		unique_together = (('libro','usuario'),)
 
 #    def __unicode__(self):
@@ -38,4 +40,4 @@ class voto(models.Model):
 
 admin.site.register(libro)
 admin.site.register(autor)
-admin.site.register(voto)
+admin.site.register(userlibro)

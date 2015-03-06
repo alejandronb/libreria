@@ -1,8 +1,3 @@
-<h1>Listado de libros</h1>
-
-
-<a href='/leidos'><p>Libros leídos</p></a>
-
 {% for libro in libros %}
 		
 	<a href='/{{ libro.id }}/detalles'><p>{{ libro.nombre }}</p>

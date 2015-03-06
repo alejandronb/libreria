@@ -18,7 +18,10 @@ urlpatterns = patterns('',
     #url(r'^listado/$', 'openshift.libreria.views', name='listar_libros'),
     url(r'^listado/', 'openshift.libreria.views.listar_libros'),
     url(r'^registro/$', 'openshift.libreria.views.registro'),
-    #url(r'^login/$', 'openshift.libreria.views.login2'),
+    url(r'^login/$', 'openshift.libreria.views.login'),
     url(r'^$', 'openshift.libreria.views.login2'),
+    url(r'^(?P<id_libro>[0-9]{0,3})/yaleido$', 'openshift.libreria.views.marcar'),
+    url(r'^(?P<id_libro>[0-9]{0,3})/detalles$', 'openshift.libreria.views.mostrar_detalle'),
+    url(r'^leidos/$', 'openshift.libreria.views.leidos'),
 
 )
